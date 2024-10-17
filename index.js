@@ -2,12 +2,12 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const cors = require("cors")
 const mongoose = require("mongoose")
-require("dotenv")
-// this is edited file
+require("dotenv").config();
+
 
 const auth = require("./routes/auth")
 
-mongoose.connect("mongodb+srv://ahsanmushtaq072:P5Fu6oiEiol4BkPl@cluster0.8zvyz.mongodb.net/", { dbName: "hamza" })
+mongoose.connect(process.env.CONNECTION_STRING, { dbName: "hamza" })
     .then(() => {
         console.log("MongoDB connected")
     })
