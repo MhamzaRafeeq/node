@@ -25,4 +25,6 @@ app.listen(PORT, () => {
     console.log(`SERVER IS RUNNING ON PORT ${PORT}`)
 })
 
-app.use("/auth", auth)
+app.use("/auth", auth);
+
+module.exports = app;
