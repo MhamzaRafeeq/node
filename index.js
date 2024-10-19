@@ -3,6 +3,7 @@ const bodyParser = require("body-parser")
 const cors = require("cors")
 const mongoose = require("mongoose")
 require("dotenv").config();
+const router = express.Router();
 
 
 const auth = require("./routes/auth")
@@ -21,10 +22,12 @@ app.use(bodyParser.json())
 app.use(cors())
 
 const { PORT = 8000 } = process.env
-app.listen(PORT, () => {
-    console.log(`SERVER IS RUNNING ON PORT ${PORT}`)
+app.listen(PORT, (req, res) => {
+    res.send(`SERVER IS RUNNING ON PORT ${PORT}`)
 })
 
 app.use("/auth", auth);
+
+
 
 module.exports = app;
