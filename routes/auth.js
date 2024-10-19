@@ -71,5 +71,8 @@ router.get("/user", verifyToken, async (req, res) => {
         res.status(500).json({ error })
     }
 })
+router.get("/test", (req, res)=>{
+    res.status(200).json({message: "api deployed successfully"});
+})
 
 module.exports = router
