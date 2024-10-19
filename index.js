@@ -22,8 +22,8 @@ app.use(bodyParser.json())
 app.use(cors())
 
 const { PORT = 8000 } = process.env
-app.listen(PORT, (req, res) => {
-    res.send(`SERVER IS RUNNING ON PORT ${PORT}`)
+app.listen(PORT, () => {
+    console.log(`SERVER IS RUNNING ON PORT ${PORT}`)
 })
 
 app.use("/auth", auth);
